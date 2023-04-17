@@ -1,0 +1,288 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMTdwrSu+pJdgaH13R5zkq1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/RenanRavi/aulas_Programacao/blob/main/Aula-Funcoes\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "jkjL5yvnEC0T"
+      },
+      "outputs": [],
+      "source": [
+        "#função calcular média\n",
+        "\n",
+        "def calculaMedia(x, y, z):\n",
+        "  return  (x+y+z)/3"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = float(input( 'nota 1:'))\n",
+        "b = float(input( 'nota 2:'))\n",
+        "c = float(input( 'nota 3:'))\n",
+        "\n",
+        "calculaMedia(a , b ,c)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K9ELnw8QJ8R0",
+        "outputId": "23718c56-83f9-4947-eac5-10a9e5b6f462"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "nota 1:10\n",
+            "nota 2:8\n",
+            "nota 3:9\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "9.0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Argumentos arbitrarios *args\n",
+        "#Quando não se tem certeza quantos argumentos são passados pela função\n",
+        "\n",
+        "def mediaTotal(*notas):\n",
+        "  soma = 0\n",
+        "  for nota in notas:\n",
+        "    soma += nota\n",
+        "  media = soma/len(notas)\n",
+        "  print( 'A media é: ', media)"
+      ],
+      "metadata": {
+        "id": "3_lNRp2SMjeE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mediaTotal(1,8,9,6,7,5,2,3,5,4,8,4,7.9)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WoRYDzoRNasf",
+        "outputId": "d74c4130-affb-47f0-8173-f7eca0183b41"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "A media é:  5.376923076923077\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Recebe Vários numeros e retorna o maior.\n",
+        "\n",
+        "def retornaMaior(*numeros):\n",
+        "\n",
+        "  maior = 0\n",
+        "  for n in numeros:\n",
+        "    if(n >= maior):\n",
+        "      maior = n\n",
+        "  return maior \n"
+      ],
+      "metadata": {
+        "id": "J3vd8kh7PWqO"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "retornaMaior(2, 5, 17, 3, 23, 5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_C7B8ywEa8D6",
+        "outputId": "fea9fad4-eaee-4750-fc2e-81ad95e9baf1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "23"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 29
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Valor de parâmetro padrão\n",
+        "\n",
+        "def nacionalidade (country = 'cuba'):\n",
+        "   print('Eu nasci em:'+ country)\n"
+      ],
+      "metadata": {
+        "id": "BqDYjSgXcnSE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nacionalidade ('Brasil')\n",
+        "nacionalidade ('França')\n",
+        "nacionalidade ('Vietnã')\n",
+        "nacionalidade ()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "J6LFjoWLfJ0i",
+        "outputId": "4b7dbdde-ed48-4ca7-f923-910c2595bc3c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Eu nasci em:Brasil\n",
+            "Eu nasci em:França\n",
+            "Eu nasci em:Vietnã\n",
+            "Eu nasci em:cuba\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#1 Escreva uma função que recebe dois parâmetros numéricos e retorna a soma desses números.\n"
+      ],
+      "metadata": {
+        "id": "u0v-g7vnft6i"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def soma (a, b):\n",
+        "    return a + b"
+      ],
+      "metadata": {
+        "id": "MbMlhPWYhhr1"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#2 Escreva uma função que recebe um número e retorna o seu valor absoluto."
+      ],
+      "metadata": {
+        "id": "j7tK-GjaiNF1"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def valorAbsoluto(num):\n",
+        "  if (num < 0):\n",
+        "    num = num * -1\n",
+        "    return num"
+      ],
+      "metadata": {
+        "id": "Cdjus3J7icsW"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#4 Escreva uma função que recebe uma lista de palavras e retorna uma lista com as palavras que possuem mais de três letras.\n"
+      ],
+      "metadata": {
+        "id": "WO1xm3LBjA4u"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def maiorque3(lista):\n",
+        "  lista3 = []\n",
+        "  for item in lista:\n",
+        "    if (len(item) > 3):\n",
+        "      lista3.append(item)\n",
+        "  return lista3   "
+      ],
+      "metadata": {
+        "id": "h2dsdrkvjhYV"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
